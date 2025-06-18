@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@theme {
+    /* Tipografías */
+    --font-sans: 'Nunito Variable', sans-serif;  /* Texto general */
+    --font-poppins: 'Poppins', sans-serif;      /* Títulos, botones, encabezados */
+
+    /* 🎨 Paleta de colores */
+
+    /* === Branding e institucional === */
+    --color-primary: #076633;        /* Verde militar institucional Uso: navbar, footer, encabezados, íconos importantes */
+    --color-gold: #dab00b;           /* Dorado decorativo Uso: medallas, sellos, bloques tipo misión/visión, íconos institucionales */
+    /* === Acciones y estados === */
+    --color-secondary: #65ae2c;      /* Verde claro Uso: botón primario, etiquetas positivas, formularios */
+    --color-accent: #e75f2d;         /* Naranja vivo Uso: botón secundario, etiquetas de llamada, elementos destacados */
+    --color-warning: #cd9c1e;        /* Mostaza/advertencia Uso: badges, notificaciones, indicadores de alerta leve */
+    --color-error: #fe0002;          /* Rojo intenso Uso: mensajes de error, validaciones, botones de eliminar */
+    /* === Base y neutros === */
+    --color-base-light: #f8f9fa;     /* Fondo claro principal Uso: fondo de página, tarjetas, secciones claras */
+    --color-base-dark: #212121;      /* Texto base oscuro Uso: texto principal sobre fondo claro */
+}

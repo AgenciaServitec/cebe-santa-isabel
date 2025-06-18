@@ -1,34 +1,48 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
+import ButtonLink from "./ButtonLink.astro";
+import SocialNetworkIcon from "./SocialNetworkIcon.astro";
+import ContentWidth from "./ContentWidth.astro";
 ---
-<footer>
-    <div class="flex justify-between items-center py-3 px-10 w-full">
-        <img class="w-10 h-10"
-             src="/images/logo.jpg" alt="CEBE Santa Isabel" />
-        <nav class="flex gap-10">
-            <a href="/">Inicio</a>
-            <a href="/nosotros">Nosotros</a>
-            <a href="/infraestructura">Infraestructura</a>
-            <a href="/contacto">Contacto</a>
-        </nav>
-        <button class="button border-1 rounded-xl px-10 py-2 text-white bg-[#ff9d01]">
-            Contáctanos
-        </button>
-    </div>
-    <div class="flex justify-between gap-4 px-10">
-        <p>@copyright swing co 2025. ALL Rights Reserved</p>
-        <div class="flex gap-4 ">
-            <div class="rounded-full bg-[#277c72] p-3">
-                <Icon name="facebook" class="w-5 h-5 text-white"/>
-            </div>
-            <div class="rounded-full bg-[#277c72] p-3">
-                <Icon name="instagram" class="w-5 h-5 rounded-full text-white bg-[#277c72]"/>
-            </div>
-            <div class="rounded-full bg-[#277c72] p-3">
-                <Icon name="x" class="w-5 h-5 rounded-full text-white bg-[#277c72]" />
-            </div>
 
+<footer class="text-base-dark border-t-2 border-primary pt-10">
+  <ContentWidth>
+    <div class="flex flex-col gap-4">
+      <div
+        class="flex flex-col lg:flex-row justify-between items-center gap-4 lg:text-lg"
+      >
+        <Image
+          src="/logo.png"
+          alt="Logo del colegio CEBE Santa Isabel"
+          width="100"
+          height="100"
+          class="w-15"
+        />
+        <nav>
+          <ul class="flex items-center gap-12">
+            <li>
+              <a href="/nosotros">Nosotros</a>
+            </li>
+            <li>
+              <a href="/infraestructura">Infraestructura</a>
+            </li>
+          </ul>
+        </nav>
+        <ButtonLink link="/">Contáctanos</ButtonLink>
+      </div>
+      <div
+        class="flex flex-col justify-between items-center gap-4 text-xs lg:text-sm"
+      >
+        <span class="order-2 text-center"
+          >&copy; 2025 CEBE Santa Isabel - Diseñado con ❤️ por Agencia Servitec</span
+        >
+        <div class="flex gap-8">
+          <SocialNetworkIcon link="/" iconName="facebook" />
+          <SocialNetworkIcon link="/" iconName="instagram" />
+          <SocialNetworkIcon link="/" iconName="x" />
         </div>
+      </div>
     </div>
+  </ContentWidth>
 </footer>

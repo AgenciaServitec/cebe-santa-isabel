@@ -3,23 +3,27 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 import "../styles/global.css";
+
+interface Props {
+  title: string;
+}
+
+const { title = "CEBE Santa Isabel" } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png+xml" href="/logo.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>{title}</title>
   </head>
   <body>
     <Header />
     <main>
-      <h1>Astro</h1>
+      <h1>{title}</h1>
     </main>
     <Footer />
   </body>
 </html>
-
-
