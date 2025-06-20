@@ -1,0 +1,19 @@
+---
+import LiteYoutube from './LiteYoutube.astro';
+
+const { videoId, title, description } = Astro.props;
+
+
+---
+
+  <article class="relative w-80 md:w-[28em] h-[14em] md:h-[20em] m-10">
+    <div class="rounded-xl bg-gray-100 p-4 pb-8">
+      <LiteYoutube videoId={videoId} title={title}/>
+    </div>
+    <div class="p-4 flex gap-10">
+      <p class="absolute top-47 md:top-68 left-0 w-60 md:w-87 h-23 md:h-28 flex-3/4 rounded-xl text-gray-600 text-sm md:text-lg font-bold font-serif bg-gray-100 px-4 py-5">{description}</p>
+        <p class="absolute left-62 top-54 md:top-75 md:left-92 flex-1/4 rounded-xl bg-gray-100 p-2 md:p-4"><svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7.75 16.25L16.25 7.75M16.25 7.75H8.5M16.25 7.75V15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></p>
+    </div>
+  </article>
