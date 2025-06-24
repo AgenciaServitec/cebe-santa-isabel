@@ -1,0 +1,98 @@
+<svg width="0" height="0" aria-hidden="true">
+  <mask id="holes-mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+    <rect x="0" y="0" width="1" height="1" fill="white" />
+    <!-- Izquierda -->
+    <rect x="0.04" y="0.45" width="0.45" height="0.25" rx="0.05" ry="0.05" fill="black" />
+    <rect x="0.04" y="0.72" width="0.45" height="0.25" rx="0.05" ry="0.05" fill="black" />
+    <!-- Derecha -->
+    <rect x="0.52" y="0.18" width="0.45" height="0.25" rx="0.05" ry="0.05" fill="black" />
+    <rect x="0.52" y="0.45" width="0.45" height="0.25" rx="0.05" ry="0.05" fill="black" />
+    <rect x="0.52" y="0.72" width="0.45" height="0.25" rx="0.05" ry="0.05" fill="black" />
+  </mask>
+</svg>
+
+<section class="px-4 sm:px-6 lg:px-10 mb-10 md:mb-2 py-10 md:py-32">
+  <div class="flex flex-col md:flex-row h-full">
+    <div class="w-full md:w-1/2 flex flex-col">
+      <div class="flex-1 flex flex-col justify-cente md:pl-15">
+        <h1 class="text-4xl sm:text-5xl lg:text-8xl font-bold mb-6 hover:scale-105 transition duration-300">Bienvenidos a CEBE Santa Isabel</h1>
+        <p class="text-gray-800 mb-6 w-full sm:w-4/5 lg:w-3/5 text-base sm:text-lg">
+          Nuestra institución tiene más de 25 años formando estudiantes con habilidades diferentes. Educamos según cada etapa de su desarrollo, en los diversos campos del conocimiento, la tecnología, las artes y el deporte.        </p>
+        <button class="mb-8 py-3 px-8 sm:py-4 sm:px-14 bg-orange-400 text-white rounded-3xl hover:bg-orange-500 hover:scale-105 transition text-lg w-72">
+          Get Started
+        </button>
+      </div>
+
+      <div class="flex-1 flex items-start">
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 w-full h-full px-4 sm:px-10">
+          <div class="w-full h-full p-2">
+            <div class="h-full bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl shadow-2xl overflow-hidden transform hover:-translate-y-1 hover:scale-105 transition duration-300 flex flex-col"><div class="p-5 text-white flex-shrink-0">
+                <div class="flex items-center mb-4">
+                  <img
+                    src="/images/students.png"
+                    alt="Mejor profesora"
+                    class="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-white object-cover"
+                  />
+                  <div class="ml-3 sm:ml-4">
+                    <h2 class="text-base sm:text-lg font-bold">Mejor Profesora</h2>
+                    <p class="text-xs sm:text-sm opacity-90">Experiencia &amp; Pasión</p>
+                  </div>
+                </div>
+              </div>
+              <div class="px-5 pb-5 text-white flex-grow">
+                <p class="text-xs sm:text-sm mb-4">
+                  Conoce a la profesora que lleva a nuestros estudiantes al siguiente nivel con métodos innovadores y cercanía.
+                </p>
+                <a
+                  href="#"
+                  class="inline-block px-4 py-1 sm:px-5 sm:py-2 bg-white text-orange-600 rounded-full hover:bg-gray-100 transition text-xs sm:text-sm"
+                >
+                  Conócela
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="w-full h-full p-2">
+            <div class="h-full bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
+              <img
+                src="/images/students.png"
+                alt="Alumnos estudiando"
+                class="w-full h-32 sm:h-40 object-cover flex-shrink-0"
+              />
+              <div class="p-5 flex-grow flex flex-col">
+                <h2 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Nuestros Estudiantes</h2>
+                <p class="text-sm sm:text-base text-gray-600 mb-4 flex-grow">
+                  Descubre cómo nuestros alumnos aprovechan al máximo los recursos y mantienen su aprendizaje al día.
+                </p>
+                <a
+                  href="#"
+                  class="inline-block px-4 py-1 sm:px-5 sm:py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition text-center text-xs sm:text-sm w-30"
+                >
+                  Ver más
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="relative w-full md:w-1/2 overflow-hidden isolate mt-8 md:mt-0">
+      <div class="absolute inset-0 bg-[url('/images/hero-backimage.jpg')] bg-cover bg-center z-0"></div>
+      <div class="hidden sm:block absolute inset-0 z-10"
+           style="mask: url(#holes-mask); -webkit-mask: url(#holes-mask); background-color: rgba(255,255,255,1);">
+      </div>
+      <img src="/images/image-hero.png" alt="Héroe"
+           class="absolute bottom-0 left-1/2 transform -translate-x-1/2
+                  w-full lg:w-[120em]
+                  object-contain z-20" />
+    </div>
+  </div>
+</section>
+<style>
+  @media (min-width: 1440px) {
+    .md1440\:flex-row { flex-direction: row; }
+    .md1440\:w-1\/2     { width: 50%; }
+  }
+</style>
