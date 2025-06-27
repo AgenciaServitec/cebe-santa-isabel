@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
 import ContentWidth from "./ContentWidth.astro";
 ---
@@ -9,20 +10,30 @@ import ContentWidth from "./ContentWidth.astro";
     <div
       class="flex flex-col md:flex-row justify-center md:justify-between items-center pt-5 px-10 w-full"
     >
-      <img class="w-10 h-10" src="/logo.jpg" alt="CEBE Santa Isabel" />
-      <nav
-        class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-3 md:gap-10 py-5 md:py-0"
-      >
-        <a href="/">Inicio</a>
-        <a href="/nosotros">Nosotros</a>
-        <a href="/infraestructura">Infraestructura</a>
-        <a href="/contacto">Contacto</a>
+      <Image
+        src="/logo.jpg"
+        alt="Logo del CEBE Santa Isabel"
+        width="200"
+        height="150"
+        loading="lazy"
+        class="w-10"
+      />
+      <nav>
+        <ul
+          class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-3 md:gap-10 py-5 md:py-0"
+        >
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/about">Nosotros</a></li>
+          <li><a href="/infrastructure">Infraestructura</a></li>
+          <li><a href="/educational-proposal">Propuesta Educativa</a></li>
+        </ul>
       </nav>
-      <button
+      <a
+        href="#"
         class="button border-1 rounded-xl px-10 py-2 text-white bg-[#ff9d01]"
       >
         Contáctanos
-      </button>
+      </a>
     </div>
 
     <div
