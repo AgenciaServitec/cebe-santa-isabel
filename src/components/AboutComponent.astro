@@ -1,0 +1,27 @@
+---
+import ContentWidth from "./ContentWidth.astro";
+import { Image } from "astro:assets";
+---
+<ContentWidth>
+  <section class="py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-4 drop-shadow-sm">
+          Sobre Nosotros
+        </h1>
+        <p class="text-lg italic text-gray-600 mb-4 mr-4 ">
+          El Centro de Educación Básica Especial brinda educación inclusiva desde Inicial hasta Primaria, adaptándose a las necesidades de estudiantes con autismo, síndrome de Down, déficit cognitivo y otros trastornos del desarrollo. Su objetivo es fomentar el desarrollo académico y personal de cada alumno en un entorno que respeta su ritmo de aprendizaje y promueve su máximo potencial.
+        </p>
+      </div>
+      <div class="w-full">
+        <Image
+          src="/images/aboutUs-image.jpeg"
+          width="600"
+          height="400"
+          alt="Niños aprendiendo en el aula inclusiva"
+          class="w-full h-auto rounded-xl shadow-lg object-cover"
+        />
+      </div>
+    </div>
+  </section>
+</ContentWidth>
