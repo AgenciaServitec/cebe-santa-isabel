@@ -1,0 +1,84 @@
+---
+import GalleryCard from "../components/GalleryCard.astro";
+import ContentWidth from "../components/ContentWidth.astro";
+
+const data = [
+  {
+    videoId: "BU8lLj4PgZY",
+    title: "Donaciones",
+    description: "Donación de material didáctico al CEBE 'SANTA ISABEL'",
+  },
+  {
+    videoId: "F7Vs5fUUYio",
+    title: "Danza",
+    description: "Contradanza del CEBE Santa Isabel",
+  },
+  {
+    videoId: "Nqwgl7wVo4w",
+    title: "Inauguración",
+    description: "Inauguración salón multisensorial CEBE Santa Isabel",
+  },
+];
+---
+
+<section>
+  <ContentWidth>
+    <div
+      class="relative py-24 px-4 sm:px-8 md:px-16 lg:px-24 overflow-hidden text-gray-900"
+    >
+      <div class="relative z-10 text-center max-w-3xl mx-auto mb-20">
+        <h1
+          class="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-4 drop-shadow-sm"
+        >
+          Nuestra Galería
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto">
+          Descubre momentos inolvidables que representan el espíritu y la
+          dedicación de nuestra comunidad educativa.
+        </p>
+        <div class="h-1 w-24 bg-[#004080] rounded-full mx-auto mt-6"></div>
+      </div>
+
+      <div
+        class="relative z-10 grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-10 lg:gap-28 place-items-center"
+      >
+        {
+          data.map((d) => (
+            <GalleryCard
+              videoId={d.videoId}
+              title={d.title}
+              description={d.description}
+            />
+          ))
+        }
+      </div>
+      <style>
+        @keyframes pulse {
+          0%,
+          100% {
+            transform: scale(1);
+            opacity: 0.2;
+          }
+          50% {
+            transform: scale(1.05);
+            opacity: 0.3;
+          }
+        }
+
+        .animate-pulse {
+          animation: pulse 8s ease-in-out infinite;
+        }
+
+        .bg-[#cddafd] {
+          background-color: #cddafd;
+        }
+        .bg-[#b3e6cc] {
+          background-color: #b3e6cc;
+        }
+        .bg-[#004080] {
+          background-color: #004080;
+        }
+      </style>
+    </div>
+  </ContentWidth>
+</section>
