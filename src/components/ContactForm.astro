@@ -1,0 +1,41 @@
+---
+
+---
+
+<section>
+  <div class="text-center py-50">
+    <p class="text-2xl">¿Como te podemos ayudar?</p>
+    <p class="text-4xl">¿Tienee alguna pregunta?</p>
+
+    <form>
+      <div class="grid grid-cols-1 sm:grid-cols-6">
+        <div class="sm:col-span-3">
+          <label>Nombre</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1"
+          />
+        </div>
+
+        <div class="sm:col-span-3">
+          <label>Apellidos</label>
+          <input type="text" name="lastname" id="lastname" required />
+        </div>
+      </div>
+
+      <label>Email</label>
+      <input type="email" name="email" id="email" required />
+
+      <label>Mensaje</label>
+      <textarea
+        name="about"
+        id="about"
+        class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+      ></textarea>
+
+      <button>Enviar</button>
+    </form>
+  </div>
+</section>
