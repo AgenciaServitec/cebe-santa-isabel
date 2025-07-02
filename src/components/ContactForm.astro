@@ -1,41 +1,101 @@
 ---
-
+import ContentWidth from "./ContentWidth.astro";
 ---
 
 <section>
-  <div class="text-center py-50">
-    <p class="text-2xl">¿Como te podemos ayudar?</p>
-    <p class="text-4xl">¿Tienee alguna pregunta?</p>
-
-    <form>
-      <div class="grid grid-cols-1 sm:grid-cols-6">
-        <div class="sm:col-span-3">
-          <label for="name">Nombre</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1"
-          />
-        </div>
-
-        <div class="sm:col-span-3">
-          <label for="lastname">Apellidos</label>
-          <input type="text" name="lastname" id="lastname" required />
-        </div>
+  <ContentWidth>
+    <div class="">
+      <div class="flex flex-col py-20 gap-3 text-center">
+        <p class="text-[#277c72] text-2xl font-bold">
+          ¿Como te podemos ayudar?
+        </p>
+        <p class="text-gray-800 text-5xl font-bold">¿Tiene alguna pregunta?</p>
       </div>
 
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required />
+      <form id="formContact" class="max-w-[25rem] mx-auto">
+        <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+          <div class="sm:col-span-6">
+            <label
+              for="fullName"
+              class="block text-sm/6 font-medium text-gray-900"
+              >Nombres y Apellidos
+            </label>
+            <input
+              type="text"
+              name="fullName"
+              id="fullName"
+              class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1"
+            />
+          </div>
 
-      <label for="about">Mensaje</label>
-      <textarea
-        name="about"
-        id="about"
-        class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-      ></textarea>
+          <div class="sm:col-span-6">
+            <label for="email" class="block text-sm/6 font-medium text-gray-900"
+              >Email</label
+            >
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="block w-full rounded-md px-3 py-1.5 outline-1"
+            />
+          </div>
 
-      <button>Enviar</button>
-    </form>
-  </div>
+          <div class="sm:col-span-6">
+            <label
+              for="phoneNumber"
+              class="block text-sm/6 font-medium text-gray-900"
+              >Teléfono o WhatsApp</label
+            >
+            <input
+              type="number"
+              name="phonenumber"
+              id="phoneNumber"
+              class="block w-full rounded-md px-3 py-1.5 outline-1"
+            />
+          </div>
+
+          <div class="sm:col-span-6">
+            <label
+              for="message"
+              class="block text-sm/6 font-medium text-gray-900">Mensaje</label
+            >
+            <textarea
+              name="message"
+              id="message"
+              class="block w-full rounded-md bg-white px-3 py-9 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-700 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="mt-6 flex justify-center">
+          <button
+            class="text-white outline-1 rounded-4xl p-5 w-full bg-[#ff9d01]"
+            >Enviar</button
+          >
+        </div>
+      </form>
+    </div>
+  </ContentWidth>
 </section>
+
+<script>
+  const form = document.getElementById("formContact") as HTMLFormElement;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const fullName = formData.get("fullName");
+    const email = formData.get("email");
+    const phoneNumber = formData.get("phoneNumber");
+    const message = formData.get("message");
+
+    console.log({
+      fullName,
+      email,
+      phoneNumber,
+      message,
+    });
+  });
+</script>
