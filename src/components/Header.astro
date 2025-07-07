@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 
 import ContentWidth from "./ContentWidth.astro";
+console.log(Astro.originPathname);
+const path = Astro.originPathname;
 ---
 
 <header>
@@ -49,12 +51,65 @@ import ContentWidth from "./ContentWidth.astro";
 
     <nav
       id="mobile-menu"
-      class="md:hidden hidden flex-col items-center px-6 gap-2"
+      class="md:hidden hidden flex-col items-center gap-2 bg-red-500"
     >
-      <a href="#" class="block py-2">Inicio</a>
-      <a href="#" class="block py-2">Servicios</a>
-      <a href="#" class="block py-2">Acerca</a>
-      <a href="#" class="block py-2">Contacto</a>
+      <ul class="w-full text-center">
+        <li>
+          <a
+            href="/"
+            class:list={[
+              "w-full block py-2",
+              {
+                "text-white bg-black": path === "/",
+              },
+            ]}>Inicio</a
+          >
+        </li>
+        <li>
+          <a
+            href="/about-us"
+            class:list={[
+              "w-full block py-2",
+              {
+                "text-white bg-black": path === "/about-us",
+              },
+            ]}>Nosotros</a
+          >
+        </li>
+        <li>
+          <a
+            href="/infrastructure"
+            class:list={[
+              "w-full block py-2",
+              {
+                "text-white bg-black": path === "/infrastructure",
+              },
+            ]}>Infraestructura</a
+          >
+        </li>
+        <li>
+          <a
+            href="/proposal"
+            class:list={[
+              "w-full block py-2",
+              {
+                "text-white bg-black": path === "/proposal",
+              },
+            ]}>Propuesta Educativa</a
+          >
+        </li>
+        <li>
+          <a
+            href="/contact"
+            class:list={[
+              "w-full block py-2",
+              {
+                "text-white bg-black": path === "/contact",
+              },
+            ]}>Contáctanos</a
+          >
+        </li>
+      </ul>
     </nav>
   </ContentWidth>
 </header>
