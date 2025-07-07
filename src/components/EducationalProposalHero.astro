@@ -1,0 +1,29 @@
+---
+import ContentWidth from "./ContentWidth.astro";
+import { Image } from "astro:assets";
+---
+
+<section class="relative bg-gradient-to-br from-white via-orange-50 to-orange-50 py-24">
+  <ContentWidth>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+      <div class="space-y-6">
+        <h1 class="text-4xl sm:text-5xl font-black text-slate-800 leading-tight mb-6">
+          Educación <span class="text-orange-600">inclusiva y con propósito</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-6">
+          Promovemos una educación integral que potencia las capacidades cognitivas, artísticas y sociales de cada estudiante.
+          Nuestra metodología fomenta el trabajo colaborativo, la ciudadanía activa y la formación en valores para enfrentar los desafíos del mundo actual.
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <Image
+          src="/images/educational-proposal-image.jpeg"
+          width="600"
+          height="600"
+          alt="Ilustración de niños aprendiendo en un aula inclusiva"
+          class="w-full max-w-md sm:max-w-lg lg:max-w-xl object-contain rounded-2xl shadow-xl"
+        />
+      </div>
+    </div>
+  </ContentWidth>
+</section>

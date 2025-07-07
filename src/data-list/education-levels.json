@@ -1,0 +1,52 @@
+[
+  {
+    "level": "initial-level",
+    "title": "Nivel Inicial",
+    "description": "Es el nivel que establece las bases de la formación de una personalidad íntegra y protagónica, a través de su participación activa en los contextos de juego, en los proyectos y asambleas del aula.",
+    "characteristics": [
+      {
+        "title": "Habilidad Investigativa",
+        "description": "Los proyectos de investigación están orientados a desarrollar y potenciar las capacidades cognitivas, haciendo uso de las expresiones artisticas para socializarlas a la comunidad."
+      },
+      {
+        "title": "Formación de la identidad",
+        "description": "Aprende a reconocerse como niño, niña, como miembro de una fmailia donde puede expresar sus emociones con naturalidad y mucha seguridad"
+      },
+      {
+        "title": "Actividad Lúdica",
+        "description": "A través del juego, el niño se apropia del mundo y sus relaciones con los demás, resuelve conflictos y pone a prueba su inventiva; así mismo es mediado por los demás"
+      },
+      {
+        "title": "Protagonismo Infantil",
+        "description": "La participación activa de los niños desarrolla el compromiso y la dedicación; ellos implica desarrollar la capacidad de trabajar solidariamente a partir de consensos."
+      }
+    ],
+    "image": "/images/initial-level.png",
+    "question": "¿Quieres conocer más sobre nuestra educación inicial?"
+  },
+  {
+    "level": "primary-level",
+    "title": "Nivel Primaria",
+    "description": "La educación primaria, en el marco de la formación integral, busca desarrollar en el niño el conocimiento científico, la creatividad, el trabajo en equipo y el ejercicio de su ciudadanía de forma protagónica.",
+    "characteristics": [
+      {
+        "title": "Desarrollo académico",
+        "description": "La actividad del niño se convierte en el principal medio de aprendizaje, donde la realidad es el recurso para la observación y experimentación."
+      },
+      {
+        "title": "Crecimiento del ser",
+        "description": "Se reconoce como parte de una comunidad con objetivos comunes que cohesionan a los miembros, donde él tiene deberes y derechos que debe respetar y exigir."
+      },
+      {
+        "title": "Trabajo cooperativo",
+        "description": "La cooperación entre los niños se desarrolla como una forma de trabajo que favorece su aprendizaje y confianza, con la intervención del maestro y diversos recursos."
+      },
+      {
+        "title": "Ejercicio de ciudadanía",
+        "description": "Los niños participan activamente en la organización y representación de su aula y nivel, además, desarrollan proyectos sociocomunitarios."
+      }
+    ],
+    "image": "/images/primary-level.png",
+    "question": "¿Quieres conocer más sobre nuestra educación primaria?"
+  }
+]
