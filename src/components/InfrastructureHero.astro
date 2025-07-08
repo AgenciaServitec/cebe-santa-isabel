@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="relative w-full h-[70vh] md:h-[90vh] overflow-hidden">
+  <Image
+    src="/images/sede.jpeg"
+    alt="Sede"
+    width="1920"
+    height="1080"
+    class="absolute inset-0 w-full h-full object-cover brightness-75"
+  />
+
+  <div class="relative z-10 flex justify-center items-center h-full px-4">
+    <div class="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-8 md:p-12 max-w-3xl text-center text-orange-400 border border-white/20">
+      <h1 class="text-3xl md:text-5xl font-black mb-4 drop-shadow-xl">Espacios de recreación</h1>
+      <p class="text-base md:text-xl drop-shadow-md">
+        Espacios donde los estudiantes acuden con el propósito de relajarse, divertirse y desconectar, complementando su jornada educativa con momentos de recreación.
+      </p>
+    </div>
+  </div>
+
+  <div class="absolute inset-0 bg-black/30"></div>
+</section>

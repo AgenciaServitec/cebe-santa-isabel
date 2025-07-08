@@ -1,0 +1,149 @@
+---
+import ContentWidth from "../components/ContentWidth.astro";
+import { Image } from "astro:assets";
+
+const spacesImages = [
+  { name: "Espacio 1", src: "/images/space1.jpeg" },
+  { name: "Espacio 2", src: "/images/space2.jpeg" },
+  { name: "Espacio 3", src: "/images/space3.jpeg" },
+  { name: "Espacio 4", src: "/images/space4.jpeg" },
+];
+---
+<section class="py-20 bg-orange-50 relative z-0">
+  <ContentWidth>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div class="bg-white/90 backdrop-blur-md border-l-8 border-orange-500 rounded-3xl shadow-xl p-8 md:p-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-orange-600 mb-6">
+          Sede Chorrillos
+        </h2>
+        <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+          Nuestro colegio cuenta con un equipamiento que brinda todas las facilidades
+          para que los alumnos puedan desarrollar exitosamente sus actividades académicas,
+          artísticas y deportivas. Cada sede fue diseñada y construida especialmente para
+          brindar a todos nuestros estudiantes un espacio grato, cómodo y seguro.
+          Asimismo contamos con equipamiento educativo y tecnológico adecuado para el
+          logro de mejores y más significativos aprendizajes.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        {spacesImages.map((image, index) => (
+          <div
+            class="relative group overflow-hidden rounded-2xl shadow-lg border border-orange-200 cursor-pointer"
+            data-image-src={image.src}
+            data-image-alt={image.name}
+            id={`image-${index}`}
+            aria-label={`Ver ${image.name} en tamaño completo`}
+            role="button"
+            tabindex="0"
+        >
+        <Image
+          src={image.src}
+          alt={image.name}
+          width="600"
+          height="400"
+          class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
+        <div class="absolute bottom-0 w-full bg-gradient-to-t from-orange-600/80 to-transparent px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </div>
+      ))}
+    </div>
+    </div>
+  </ContentWidth>
+</section>
+<div id="imageModal"
+     class="fixed inset-0 hidden items-center justify-center bg-black/70 z-50 px-4 transition-opacity duration-300"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modalTitle">
+  <div id="modalContent"
+       class="relative max-w-4xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden scale-95 opacity-0 transition-all duration-300 transform">
+    <div class="flex justify-end p-3 bg-orange-500">
+      <button
+        id="closeModal"
+        class="text-white text-3xl hover:text-orange-200 transition focus:outline-none focus:ring-2 focus:ring-white"
+        aria-label="Cerrar modal"
+      >
+        x
+      </button>
+    </div>
+    <div class="p-4 bg-white">
+      <img id="modalImage"
+           src=""
+           alt=""
+           loading="lazy"
+           class="rounded-xl w-full max-h-[70vh] object-contain transition-all duration-300"
+           aria-describedby="modalTitle" />
+    </div>
+  </div>
+</div>
+
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const closeModalBtn = document.getElementById("closeModal");
+
+    document.querySelectorAll('[data-image-src]').forEach(item => {
+      item.addEventListener('click', () => showModal(
+        item.dataset.imageSrc,
+        item.dataset.imageAlt
+      ));
+
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          showModal(item.dataset.imageSrc, item.dataset.imageAlt);
+        }
+      });
+    });
+
+    function showModal(src, alt) {
+      modalImage.src = src;
+      modalImage.alt = alt;
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      closeModalBtn.focus();
+
+      const modalContent = document.getElementById("modalContent");
+
+      requestAnimationFrame(() => {
+        modalContent.classList.remove("scale-95", "opacity-0");
+        modalContent.classList.add("scale-100", "opacity-100");
+      });
+
+      closeModalBtn.focus();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modalContent = document.getElementById("modalContent");
+
+      modalContent.classList.remove("scale-100", "opacity-100");
+      modalContent.classList.add("scale-95", "opacity-0");
+
+      setTimeout(() => {
+        modal.classList.remove("flex");
+        modal.classList.add("hidden");
+        document.body.style.overflow = '';
+        modalImage.src = "";
+        modalImage.alt = "";
+      }, 300);
+    }
+
+    closeModalBtn.addEventListener("click", closeModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  });
+</script>
