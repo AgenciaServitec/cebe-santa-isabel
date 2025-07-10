@@ -1,6 +1,7 @@
 ---
 import ContentWidth from "../components/ContentWidth.astro";
 import { Image } from "astro:assets";
+import Card from "../components/Card.astro";
 
 const data = [
   {
@@ -43,31 +44,12 @@ const data = [
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
       {data.map((item) => (
-        <div class="relative hover:scale-[1.01] transition-transform duration-300">
-          <div class="bg-gray-100 rounded-t-2xl overflow-hidden justify-items-center">
-            <img
-              src={item.image}
-              alt={item.title}
-              class="w-[90%] h-60 my-6 object-cover"
-            />
-          </div>
-          <div class="px-6 p-2 rounded-b-2xl bg-gray-100 xl:w-[35em]">
-            <h3 class="text-2xl font-bold text-orange-500 mb-4 hover:text-orange-600 transition-colors duration-300">
-              {item.title}
-            </h3>
-            <p class="text-gray-700 leading-relaxed">{item.description}</p>
-            <p class="xl:absolute z-30 bottom-3 right-1 p-5 flex-1/4 rounded-xl bg-gray-100">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="hidden xl:block w-12 h-12 text-orange-500 hover:scale-110 transition-transform duration-300"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M4 3a1 1 0 00-1 1v6a1 1 0 001 1h1v5a3 3 0 006 0h2a3 3 0 006 0h1a1 1 0 100-2h-1V4a1 1 0 00-1-1H4zm12 10V5h2v8h-2zm-4 0V5h2v8h-2zM6 5h2v8H6V5zm0 10a1 1 0 112 0 1 1 0 01-2 0zm8 0a1 1 0 112 0 1 1 0 01-2 0z" />
-              </svg>
-            </p>
-          </div>
-        </div>
+        <Card
+          title={item.title}
+          description={item.description}
+          image={item.image}
+          size="lg"
+        />
       ))}
     </div>
   </ContentWidth>
