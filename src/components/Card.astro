@@ -1,0 +1,66 @@
+---
+import { Icon } from "astro-icon/components";
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  iconName?: string;
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  descriptionSize?: "xs" | "sm" | "normal" | "lg" | "xl";
+}
+
+const {
+  title,
+  description,
+  image,
+  iconName,
+  size = "md",
+  descriptionSize = "normal"
+} = Astro.props;
+
+const sizeClasses = {
+  xs: "h-40 xl:w-[14em] text-sm",
+  sm: "h-36 xl:w-[20em] text-lg",
+  md: "h-48 xl:w-[28em] text-xl",
+  lg: "h-82 xl:w-[35em] text-2xl",
+  xl: "h-100 xl:w-[42em] text-3xl",
+}[size];
+
+const descriptionSizeClasses = {
+  xs: "text-xs",
+  sm: "text-sm",
+  normal: "text-[17px]",
+  lg: "text-lg",
+  xl: "text-xl",
+}[descriptionSize];
+---
+
+<div class={`relative hover:scale-[1.01] transition-transform duration-300`}>
+  <div class={`bg-gray-100 rounded-t-2xl overflow-hidden flex justify-center items-center ${sizeClasses?.split(" ")[0]}`}>
+    {image ? (
+      <img src={image} alt={title} class="w-[90%] h-[90%] object-cover rounded-xl" />
+    ) : iconName ? (
+      <Icon name={iconName} class="w-15 h-15 text-[#21776a]" />
+    ) : (
+      <div class="text-gray-400 italic">Sin imagen ni ícono</div>
+    )}
+  </div>
+
+  <div class={`px-6 p-2 rounded-b-2xl bg-gray-100 ${sizeClasses?.split(" ")[1]}`}>
+    <h3 class="font-bold text-orange-500 mb-2 hover:text-orange-600 transition-colors duration-300">
+      {title}
+    </h3>
+    <p class={`text-gray-700 leading-relaxed ${descriptionSizeClasses}`}>{description}</p>
+
+    <p class="xl:absolute z-30 bottom-1 right-1 p-5 flex-1/4 rounded-xl bg-gray-100">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="hidden xl:block w-12 h-12 text-orange-500 hover:scale-110 transition-transform duration-300"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M4 3a1 1 0 00-1 1v6a1 1 0 001 1h1v5a3 3 0 006 0h2a3 3 0 006 0h1a1 1 0 100-2h-1V4a1 1 0 00-1-1H4zm12 10V5h2v8h-2zm-4 0V5h2v8h-2zM6 5h2v8H6V5zm0 10a1 1 0 112 0 1 1 0 01-2 0zm8 0a1 1 0 112 0 1 1 0 01-2 0z" />
+      </svg>
+    </p>
+  </div>
+</div>

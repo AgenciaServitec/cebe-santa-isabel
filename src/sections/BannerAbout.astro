@@ -1,31 +1,38 @@
-<section class="pt-5 pb-20 px-2 md:px-20">
-  <div class="relative">
-    <img
-      src="/images/banner.png"
-      alt="banner desktop"
-      class="hidden md:block w-full h-auto object-cover"
-    >
+---
+import ContentWidth from "../components/ContentWidth.astro";
+---
+<section>
+  <ContentWidth>
+    <div class="pt-5 pb-20">
+      <div class="relative">
+        <img
+          src="/images/banner.png"
+          alt="banner desktop"
+          class="hidden md:block w-full h-auto object-cover"
+        >
 
-    <img
-      src="/images/banner-mobile.png"
-      alt="banner mobile"
-      class="block md:hidden w-full h-auto object-cover"
-    >
-    <a href="/about-us"
-      class="hidden md:flex absolute top-0 right-0 bg-[#8b4f8b] text-white p-2 md:p-5 xl:p-6 2xl:p-12 xl:rounded-4xl md:rounded-2xl sm:p-2 lg:p-4 rounded-xl hover:scale-105 transition duration-300"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" class="xl:w-30 xl:h-30 lg:w-20 lg:h-20 md:w-10 md:h-10 w-5 sm:w-10 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M7.75 16.25L16.25 7.75M16.25 7.75H8.5M16.25 7.75V15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
-  </div>
+        <img
+          src="/images/banner-mobile.png"
+          alt="banner mobile"
+          class="block md:hidden w-full h-auto object-cover"
+        >
+        <a href="/about-us"
+           class="hidden md:flex absolute top-0 right-0 bg-[#8b4f8b] text-white p-2 md:p-5 xl:p-6 2xl:p-8 xl:rounded-4xl md:rounded-2xl sm:p-2 lg:p-4 rounded-xl hover:scale-105 transition duration-300"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="xl:w-30 xl:h-30 lg:w-20 lg:h-20 md:w-10 md:h-10 w-5 sm:w-10 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.75 16.25L16.25 7.75M16.25 7.75H8.5M16.25 7.75V15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
 
-  <div class="mt-4 md:hidden text-center">
-    <a href="/about-us" class="flex items-center gap-2 mx-auto bg-[#8b4f8b] text-white px-18 py-2 w-full justify-items-center justify-center rounded-4xl hover:scale-105 transition duration-300">
-      <span class="text-xl text-center">Ir a ver más</span>
-      <svg xmlns="http://www.w3.org/2000/svg" class="md:w-26 md:h-26 w-5 h-5 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M7.75 16.25L16.25 7.75M16.25 7.75H8.5M16.25 7.75V15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
-  </div>
+      <div class="mt-4 md:hidden text-center">
+        <a href="/about-us" class="flex items-center gap-2 mx-auto bg-[#8b4f8b] text-white px-18 py-2 w-full justify-items-center justify-center rounded-4xl hover:scale-105 transition duration-300">
+          <span class="text-xl text-center">Ir a ver más</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="md:w-26 md:h-26 w-5 h-5 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.75 16.25L16.25 7.75M16.25 7.75H8.5M16.25 7.75V15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </ContentWidth>
 </section>
