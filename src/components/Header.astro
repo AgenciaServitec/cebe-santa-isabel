@@ -3,37 +3,39 @@ import { Image } from "astro:assets";
 import ContentWidth from "./ContentWidth.astro";
 const path = Astro.originPathname;
 ---
-
-<header>
+<header class="fixed top-0 left-0 right-0 z-50 bg-orange-100/80 backdrop-blur-md border-b border-orange-300 shadow-md">
   <ContentWidth>
-    <div class="flex justify-between items-center py-3 px-10 w-full">
+    <div class="flex justify-between items-center py-3 px-4 md:px-10 w-full">
       <Image
-        src="/logo.jpg"
+        src="/logo.webp"
         alt="Logo del CEBE Santa Isabel"
-        width="200"
-        height="150"
+        width="100"
+        height="100"
         loading="eager"
-        class="w-10"
+        class="w-24 transition-transform duration-300 hover:scale-105"
       />
 
       <nav id="menu" class="hidden md:flex">
-        <ul class="flex items-center gap-10">
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/about-us">Nosotros</a></li>
-          <li><a href="/infrastructure">Infraestructura</a></li>
-          <li><a href="/educational-proposal">Propuesta Educativa</a></li>
+        <ul class="flex items-center gap-8 text-base font-semibold text-orange-900">
+          <li><a href="/" class="relative group">Inicio<span class="nav-underline"></span></a></li>
+          <li><a href="/about-us" class="relative group">Nosotros<span class="nav-underline"></span></a></li>
+          <li><a href="/infrastructure" class="relative group">Infraestructura<span class="nav-underline"></span></a></li>
+          <li><a href="/educational-proposal" class="relative group">Propuesta Educativa<span class="nav-underline"></span></a></li>
         </ul>
       </nav>
 
       <div class="hidden md:block">
-        <a href="/contact" class="button border-1 rounded-xl p-3">
+        <a
+          href="/contact"
+          class="text-orange-900 px-5 py-2 rounded-full font-bold border-2 border-orange-700 shadow-md transition duration-300 hover:bg-orange-600 hover:text-white hover:scale-105"
+        >
           Contáctanos
         </a>
       </div>
 
       <button id="menu-btn" class="md:hidden focus:outline-none">
         <svg
-          class="w-6 h-6"
+          class="w-8 h-8 text-orange-800 transition-transform duration-200 hover:scale-110"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -42,79 +44,121 @@ const path = Astro.originPathname;
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
+            d="M4 6h16M4 12h16M4 18h16"
+          />
         </svg>
       </button>
     </div>
 
     <nav
       id="mobile-menu"
-      class="md:hidden hidden flex-col items-center gap-2 bg-red-500"
+      class="md:hidden hidden flex-col items-center gap-2 bg-orange-50 border-t border-orange-200 shadow-inner animate-slide-down"
     >
-      <ul class="w-full text-center">
+      <ul class="w-full text-center text-orange-900 font-semibold text-base py-2">
         <li>
           <a
             href="/"
             class:list={[
-              "w-full block py-2",
+              "w-full block py-3 hover:bg-orange-200 rounded-md transition",
               {
-                "text-white bg-black": path === "/",
+                "text-white bg-orange-600": path === "/",
               },
-            ]}>Inicio</a
+            ]}
           >
+            Inicio
+          </a>
         </li>
         <li>
           <a
             href="/about-us"
             class:list={[
-              "w-full block py-2",
+              "w-full block py-3 hover:bg-orange-200 rounded-md transition",
               {
-                "text-white bg-black": path === "/about-us",
+                "text-white bg-orange-600": path === "/about-us",
               },
-            ]}>Nosotros</a
+            ]}
           >
+            Nosotros
+          </a>
         </li>
         <li>
           <a
             href="/infrastructure"
             class:list={[
-              "w-full block py-2",
+              "w-full block py-3 hover:bg-orange-200 rounded-md transition",
               {
-                "text-white bg-black": path === "/infrastructure",
+                "text-white bg-orange-600": path === "/infrastructure",
               },
-            ]}>Infraestructura</a
+            ]}
           >
+            Infraestructura
+          </a>
         </li>
         <li>
           <a
             href="/educational-proposal"
             class:list={[
-              "w-full block py-2",
+              "w-full block py-3 hover:bg-orange-200 rounded-md transition",
               {
-                "text-white bg-black": path === "/educational-proposal",
+                "text-white bg-orange-600": path === "/educational-proposal",
               },
-            ]}>Propuesta Educativa</a
+            ]}
           >
+            Propuesta Educativa
+          </a>
         </li>
         <li>
           <a
             href="/contact"
             class:list={[
-              "w-full block py-2",
+              "w-full block py-3 hover:bg-orange-200 rounded-md transition",
               {
-                "text-white bg-black": path === "/contact",
+                "text-white bg-orange-600": path === "/contact",
               },
-            ]}>Contáctanos</a
+            ]}
           >
+            Contáctanos
+          </a>
         </li>
       </ul>
     </nav>
   </ContentWidth>
 </header>
 
+<style>
+  @keyframes slide-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-down {
+    animation: slide-down 0.3s ease-out;
+  }
+
+  .group .nav-underline {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ea580c;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .group:hover .nav-underline {
+    width: 100%;
+  }
+</style>
+
 <script>
-  const btn = document.getElementById("menu-btn") as HTMLButtonElement;
-  const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
+  const btn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
 
   btn.addEventListener("click", () => {
     mobileMenu.classList.toggle("hidden");
